@@ -42,3 +42,4 @@ export const calculateTotal = (tripCost, options) => {
   }
   return total * multiplier;
 };
+export default calculateTotal;
