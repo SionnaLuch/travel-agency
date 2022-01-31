@@ -6,13 +6,13 @@ import pricing from '../../../data/pricing.json';
 import PropTypes from 'prop-types';
 
 
-const OrderForm = ({tripCost, options}) =>{
+const OrderForm = ({tripCost, options,setOrderOption }) =>{
     return (
 <Grid>
   <Row>
       {pricing.map(options =>(
           <Col md={4} key={options.id}>
-              <OrderOption {...options} /> 
+              <OrderOption {...options} currentValue={options.id['car-rental']} setOrderOption={setOrderOption}/> 
           </Col>
       ))};
     <Col xs={12}>
@@ -23,7 +23,7 @@ const OrderForm = ({tripCost, options}) =>{
     );
 };
 OrderForm.propTypes = {
-    cost: PropTypes.string,
+    tripCost: PropTypes.string,
     options:PropTypes.object,
   
 }
