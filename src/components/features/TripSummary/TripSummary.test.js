@@ -1,22 +1,23 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import TripSummary from './TripSummary';
-import { Link } from 'react-router-dom';
 describe('Component TripSummary', () => {
   it('render correct link', ()=>{
     const link = '/trip/abc';
-    const component = shallow(<TripSummary id='abc'/>);
-    expect(component.find(<Link />).prop('to')).toEqual(link);
+    const component = shallow(<TripSummary id='abc' tags={[]}/>);
+    expect(component.find('Link').prop('to')).toEqual(link);
   });
   it('should check image alt & src', () => {
     const alt = 'Alt';
     const image = 'image.jpg';
-    const component = shallow(<TripSummary name={alt} image={image} />);
+    const component = shallow(<TripSummary name={alt} image={image} tags={[]}/>);
+    console.log(component.find('img').prop('src', 'alt'));
+    expect(component.find('img').prop('alt')).toEqual(alt);
+    expect(component.find('img').prop('src')).toEqual(image);
 
-    expect(component.find('img').prop('src', 'alt')).toEqual(alt, image);
   });
   it('should render without crashing', () => {
-    const component = shallow(<TripSummary name='props Name' cost='props Cost' days={123} />);
+    const component = shallow(<TripSummary name='props Name' cost='props Cost' days={123} tags={[]} />);
     expect(component).toBeTruthy();
     console.log(component.debug());
   });
@@ -31,7 +32,7 @@ describe('Component TripSummary', () => {
     expect(component.find('.tag').at(2).text()).toEqual(tag[2]);
   });
   it('should not render empty props tags', () => {
-    const component = shallow(<TripSummary name='props name'/>);
-    expect(component.find('.tags').exists()).toEqual(false);
+    const component = shallow(<TripSummary name='props name'tags ={[]}/>);
+    expect(component.find('.tag').exists()).toEqual(false);
   });
 });

@@ -5,17 +5,17 @@ import {formatPrice} from '../../../utils/formatPrice';
 import PropTypes from 'prop-types';
 
 const OrderSummary = (props)=> {
-    return( 
-        <div>
-            <h2 className={styles.component}>
+  return( 
+    <div>
+      <h2 className={styles.component}>
             Total:
-                <strong>{formatPrice(calculateTotal(props.cost, props.options))}</strong>
-            </h2>
-        </div>
-    );
+        <strong>{formatPrice(calculateTotal(props.cost, props.options))}</strong>
+      </h2>
+    </div>
+  );
 };
 OrderSummary.propTypes = {
-    options: PropTypes.object,
-    cost:PropTypes.string,
+  options: PropTypes.object,
+  cost:PropTypes.string,
 };
 export default OrderSummary;
