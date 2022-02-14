@@ -111,12 +111,12 @@ for(let type in optionTypes){
         break;
       }
       case 'icon': {
-        
+        /* tests for icon */
         it('contains div with class icon', () => {
           const icons = renderedSubcomponent.find(Icon);
           expect(icons).toBeTruthy();
         });
-        it('should run setOrderOption function on change', () => {
+        it('should run setOrderOption function on click', () => {
           renderedSubcomponent.find('div.icon').simulate('click');
           expect(mockSetOrderOption).toBeCalledTimes(1);
           expect(mockSetOrderOption).toBeCalledWith({ [mockProps.id]: testValue });
@@ -125,7 +125,7 @@ for(let type in optionTypes){
         break;
       }
       case 'checkboxes': {
-        /* tests for dropdown */
+        /* tests for checkboxes */
         it('contains div and label', () => {
           const checkboxesDiv = renderedSubcomponent.find('div');
           expect(checkboxesDiv).toBeTruthy();
@@ -141,7 +141,7 @@ for(let type in optionTypes){
         break;
       }
       case 'number': {
-        /* tests for dropdown */
+        /* tests for number */
         it('contains input', () => {
           const input = renderedSubcomponent.find('input');
           expect(input).toBeTruthy();
@@ -155,8 +155,8 @@ for(let type in optionTypes){
         break;
       }
       case 'text': {
-        /* tests for dropdown */
-        it('contains select and options', () => {
+        /* tests for text */
+        it('contains input', () => {
           const input = renderedSubcomponent.find('input');
           expect(input).toBeTruthy();
       
@@ -170,8 +170,8 @@ for(let type in optionTypes){
         break;
       }
       case 'date': {
-        /* tests for dropdown */
-        it('contains select and options', () => {
+        /* tests for date */
+        it('contains date picker', () => {
           const datePicker = renderedSubcomponent.find(DatePicker);
           expect(datePicker).toBeTruthy();
           expect(datePicker.length).toBe(1);
