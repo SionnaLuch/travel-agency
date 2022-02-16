@@ -37,6 +37,49 @@
       "start-date": "2022-02-22T23:00:00.000Z",
       "totalCost": "$9,853",
       "id": 3
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [
+        "kitchen"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "ttt",
+      "contact": "ttt",
+      "start-date": "",
+      "totalCost": "$69,233",
+      "id": 4
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [
+        "kitchen"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "ttt",
+      "contact": "ttt",
+      "start-date": "",
+      "totalCost": "$69,233",
+      "id": 5
+    },
+    {
+      "car-rental": "",
+      "accommodation": "hotel",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "rrr",
+      "contact": "ddd",
+      "start-date": "",
+      "totalCost": "$68,733",
+      "tripId": "5cc1d10107e2be6064ff9129",
+      "tripName": "Surprising jaunt in admirable United Arab Emirates",
+      "country": "United Arab Emirates",
+      "id": 6
     }
   ]
 }

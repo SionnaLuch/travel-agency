@@ -49,7 +49,7 @@ const checkData = (options, tripCost, tripId, tripName, country) => {
   }
 };
 
-const OrderForm = ({tripCost, options,setOrderOption }) =>{
+const OrderForm = ({tripCost, options,setOrderOption,tripId, tripName, country}) =>{
   return (
     <Grid>
       <Row>
@@ -61,7 +61,7 @@ const OrderForm = ({tripCost, options,setOrderOption }) =>{
         <Col xs={12}>
           <OrderSummary cost={tripCost} options={options}/>
         </Col>
-        <Button onClick={() => checkData(options, tripCost)}>Order now!</Button>
+        <Button onClick={() => checkData(options, tripCost,tripId, tripName, country )}>Order now!</Button>
       </Row>
     </Grid>
   );
