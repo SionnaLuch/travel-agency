@@ -23,6 +23,20 @@
       "start-date": "",
       "totalCost": "$9,553",
       "id": 2
+    },
+    {
+      "car-rental": "full",
+      "accommodation": "hotel",
+      "features": [
+        "all-inclusive"
+      ],
+      "adults": 1,
+      "children": 0,
+      "name": "tak",
+      "contact": "666666666",
+      "start-date": "2022-02-22T23:00:00.000Z",
+      "totalCost": "$9,853",
+      "id": 3
     }
   ]
 }

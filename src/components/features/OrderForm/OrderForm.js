@@ -9,12 +9,16 @@ import settings from '../../../data/settings';
 import {formatPrice} from '../../../utils/formatPrice';
 import {calculateTotal} from '../../../utils/calculateTotal';
 
-const sendOrder = (options, tripCost) => {
+const sendOrder = (options, tripCost, tripId, tripName, country) => {
   const totalCost = formatPrice(calculateTotal(tripCost, options));
 
   const payload = {
     ...options,
     totalCost,
+    tripId,
+    tripName,
+    country,
+    
   };
 
   const url = settings.db.url + '/' + settings.db.endpoint.orders;
@@ -35,6 +39,15 @@ const sendOrder = (options, tripCost) => {
       console.log('parsedResponse', parsedResponse);
     });
 };
+const checkData = (options, tripCost, tripId, tripName, country) => {
+  if(options.name && options.contact) {
+    sendOrder(options, tripCost, tripId, tripName, country);
+    window.alert('order confirm');
+  }
+  else {
+    window.alert('order incomplete');
+  }
+};
 
 const OrderForm = ({tripCost, options,setOrderOption }) =>{
   return (
@@ -48,7 +61,7 @@ const OrderForm = ({tripCost, options,setOrderOption }) =>{
         <Col xs={12}>
           <OrderSummary cost={tripCost} options={options}/>
         </Col>
-        <Button onClick={() => sendOrder(options, tripCost)}>Order now!</Button>
+        <Button onClick={() => checkData(options, tripCost)}>Order now!</Button>
       </Row>
     </Grid>
   );
@@ -57,6 +70,9 @@ OrderForm.propTypes = {
   tripCost: PropTypes.string,
   options:PropTypes.object,
   setOrderOption:PropTypes.func,
+  tripId: PropTypes.string,
+  tripName: PropTypes.string,
+  country: PropTypes.string,
   
 };
 
