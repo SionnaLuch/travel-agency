@@ -7,8 +7,8 @@ const Hero = ({variant = '', titleText, imageSrc, ...otherProps}) => (
   <div {...otherProps} className={styles.component + variant.split(' ').map(name => ' ' + (styles[name] || name)).join('')}>
     <h2 className={styles.title}>{titleText}</h2>
     <img className={styles.image} alt="hero-image" src={imageSrc} />
-    <div className={styles.happyHour}
-    ><HappyHourAd />
+    <div className={styles.happyHour}>
+      <HappyHourAd title="Happy Hour" promoDescription="Promo till 13:00!" />
     </div>
   </div>
 );
