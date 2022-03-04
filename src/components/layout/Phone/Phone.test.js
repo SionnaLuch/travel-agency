@@ -10,9 +10,10 @@ describe ('component Phone ',()=>{
     expect(component).toBeTruthy();
   });
 });
-it('should contain icon',()=>{
+it('should contain icon and span',()=>{
   const component = shallow(<Phone/>);
   expect(component.exists(Icon)).toEqual(true);
+  expect(component.exists('span')).toEqual(true);
 });
 const trueDate = Date;
 const mockDate = customDate => class extends Date {
